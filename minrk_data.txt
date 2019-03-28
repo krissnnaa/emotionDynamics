@@ -1,0 +1,29 @@
+Created Date			 Comments
+2018-11-21T14:41:19Z			`obj` is a signature, not the object whose signature we are rendering. maybe give it a name like `obj_signature` 
+2018-11-21T14:41:30Z			i assume `self` here should be the signature object 
+2018-11-21T14:41:19Z			`obj` is a signature, not the object whose signature we are rendering. maybe give it a name like `obj_signature` 
+2018-11-21T14:41:30Z			i assume `self` here should be the signature object 
+2018-10-10T14:09:26Z			this can be just `super()` since ipython requires python 3 
+2018-10-10T14:12:10Z			this empty `args` is never used 
+2018-10-10T14:09:26Z			this can be just `super()` since ipython requires python 3 
+2018-10-10T14:12:10Z			this empty `args` is never used 
+2018-09-14T13:19:30Z			this one has no leading `%` but others do. presumably only one of those is right, so they should be made consistentotherwise 👍  
+2018-09-14T13:19:30Z			this one has no leading `%` but others do. presumably only one of those is right, so they should be made consistentotherwise 👍  
+2018-09-10T09:04:21Z			development 
+2018-09-10T09:04:53Z			improvement 
+2018-09-10T09:04:21Z			development 
+2018-09-10T09:04:53Z			improvement 
+2018-08-16T13:50:34Z			neither of these are dependencies, right? we shouldn't require these packages. 
+2018-09-04T13:22:39Z			deprecations 
+2018-09-04T14:43:04Z			adding `yield interactivity` here makes this a not-entirely-valid coroutine, doesn't it? when i try to call `await run_cell_async` from ipykernel, i get a `bad yield: 'last_expr'`. how can we communicate this required info without faking that this isn't actually a coroutine? does it need to be an actual async generator? 
+2018-08-16T13:50:34Z			neither of these are dependencies, right? we shouldn't require these packages. 
+2018-09-04T13:22:39Z			deprecations 
+2018-09-04T14:43:04Z			adding `yield interactivity` here makes this a not-entirely-valid coroutine, doesn't it? when i try to call `await run_cell_async` from ipykernel, i get a `bad yield: 'last_expr'`. how can we communicate this required info without faking that this isn't actually a coroutine? does it need to be an actual async generator? 
+2018-06-13T09:18:31Z			isn't the right fix to re-order the inheritance so the mixin comes first? 
+2018-06-13T09:18:31Z			isn't the right fix to re-order the inheritance so the mixin comes first? 
+2018-02-19T10:06:03Z			thanks! can you make this a `bool(true, config=true)` trait rather than an environment variable? that's how we make things configurable in ipython. see `highlight_matching_brackets` above on l194 for a similar example (it has a default of false, but this should default to true). then here it can be `enable_history_search=self.enable_history_search`. 
+2018-02-20T10:18:15Z			perfect, thanks! 
+2018-02-19T10:06:03Z			thanks! can you make this a `bool(true, config=true)` trait rather than an environment variable? that's how we make things configurable in ipython. see `highlight_matching_brackets` above on l194 for a similar example (it has a default of false, but this should default to true). then here it can be `enable_history_search=self.enable_history_search`. 
+2018-02-20T10:18:15Z			perfect, thanks! 
+2018-02-12T14:35:51Z			sorry about that. updated. 
+2018-02-12T14:35:51Z			sorry about that. updated. 

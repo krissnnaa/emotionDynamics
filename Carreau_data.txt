@@ -1,0 +1,280 @@
+Created Date			 Comments
+2019-03-19T20:10:15Z			so i get an infinite recursion somewhere here. i'm going to attempt a refactor with a 2 step: search and update.  
+2019-03-19T20:10:15Z			so i get an infinite recursion somewhere here. i'm going to attempt a refactor with a 2 step: search and update.  
+2019-02-11T03:39:35Z			i believe you ned to use the iptest entry point that will call iptestcontroller.py otherwise some setup might not be done correctly on all systems. i have to check thoughwhat the exact difference is. 
+2019-02-11T03:39:35Z			i believe you ned to use the iptest entry point that will call iptestcontroller.py otherwise some setup might not be done correctly on all systems. i have to check thoughwhat the exact difference is. 
+2019-02-18T19:56:10Z			thanks for the review, i added this to every relevant point.  
+2019-02-18T19:56:49Z			this was apparently testing we properly handle a bug in tokenizer that was fixed in 3.8, so the test is not relevant anymore.  
+2019-02-18T19:56:10Z			thanks for the review, i added this to every relevant point.  
+2019-02-18T19:56:49Z			this was apparently testing we properly handle a bug in tokenizer that was fixed in 3.8, so the test is not relevant anymore.  
+2019-02-18T22:36:43Z			you used `char` here instead of `chr`. i fixed it. 
+2019-02-18T22:40:20Z			those 3 things are not quite correct. python have functions and methods as first class values, so you can do 
+
+```diff
+- for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches+ for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches, self.fwd_unicode_match``and it will work better.  
+2019-02-18T22:48:59Z			there is one more issue if we run the test here. 
+we can see that if `[x for x in names if x.startswith(s)]` is empty, then we should not return `s` but an empty string. 
+
+this might be a bug somewhere else in ipython, but it breaks the test suite. i can fix it like so : 
+```diff
+@ completer.py:2076 @ def fwd_unicode_match(self, text:str) -> tuple[str, list]         # if text starts with slash
+         if slashpos > -1             s = text[slashpos+1:-            return s, [x for x in names if x.startswith(s)+            candidates = [x for x in names if x.startswith(s)+            if candidates+                return s, [x for x in names if x.startswith(s)+            else+                return '', (         # if text does not start with slash
+         else-            return u'', [+            return u'', (``` 
+2019-02-18T22:36:43Z			you used `char` here instead of `chr`. i fixed it. 
+2019-02-18T22:40:20Z			those 3 things are not quite correct. python have functions and methods as first class values, so you can do 
+
+```diff
+- for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches+ for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches, self.fwd_unicode_match``and it will work better.  
+2019-02-18T22:48:59Z			there is one more issue if we run the test here. 
+we can see that if `[x for x in names if x.startswith(s)]` is empty, then we should not return `s` but an empty string. 
+
+this might be a bug somewhere else in ipython, but it breaks the test suite. i can fix it like so : 
+```diff
+@ completer.py:2076 @ def fwd_unicode_match(self, text:str) -> tuple[str, list]         # if text starts with slash
+         if slashpos > -1             s = text[slashpos+1:-            return s, [x for x in names if x.startswith(s)+            candidates = [x for x in names if x.startswith(s)+            if candidates+                return s, [x for x in names if x.startswith(s)+            else+                return '', (         # if text does not start with slash
+         else-            return u'', [+            return u'', (``` 
+2019-01-06T17:51:23Z			tip: endswith support multiple values, so you could do `full_filename.endswith(('.ipy', 'ipynb', '.py'))`... 
+2019-01-06T17:51:23Z			tip: endswith support multiple values, so you could do `full_filename.endswith(('.ipy', 'ipynb', '.py'))`... 
+2019-03-19T20:10:15Z			so i get an infinite recursion somewhere here. i'm going to attempt a refactor with a 2 step: search and update.  
+2019-03-19T20:10:15Z			so i get an infinite recursion somewhere here. i'm going to attempt a refactor with a 2 step: search and update.  
+2019-02-11T03:39:35Z			i believe you ned to use the iptest entry point that will call iptestcontroller.py otherwise some setup might not be done correctly on all systems. i have to check thoughwhat the exact difference is. 
+2019-02-11T03:39:35Z			i believe you ned to use the iptest entry point that will call iptestcontroller.py otherwise some setup might not be done correctly on all systems. i have to check thoughwhat the exact difference is. 
+2019-02-18T19:56:10Z			thanks for the review, i added this to every relevant point.  
+2019-02-18T19:56:49Z			this was apparently testing we properly handle a bug in tokenizer that was fixed in 3.8, so the test is not relevant anymore.  
+2019-02-18T19:56:10Z			thanks for the review, i added this to every relevant point.  
+2019-02-18T19:56:49Z			this was apparently testing we properly handle a bug in tokenizer that was fixed in 3.8, so the test is not relevant anymore.  
+2019-02-18T22:36:43Z			you used `char` here instead of `chr`. i fixed it. 
+2019-02-18T22:40:20Z			those 3 things are not quite correct. python have functions and methods as first class values, so you can do 
+
+```diff
+- for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches+ for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches, self.fwd_unicode_match``and it will work better.  
+2019-02-18T22:48:59Z			there is one more issue if we run the test here. 
+we can see that if `[x for x in names if x.startswith(s)]` is empty, then we should not return `s` but an empty string. 
+
+this might be a bug somewhere else in ipython, but it breaks the test suite. i can fix it like so : 
+```diff
+@ completer.py:2076 @ def fwd_unicode_match(self, text:str) -> tuple[str, list]         # if text starts with slash
+         if slashpos > -1             s = text[slashpos+1:-            return s, [x for x in names if x.startswith(s)+            candidates = [x for x in names if x.startswith(s)+            if candidates+                return s, [x for x in names if x.startswith(s)+            else+                return '', (         # if text does not start with slash
+         else-            return u'', [+            return u'', (``` 
+2019-02-18T22:36:43Z			you used `char` here instead of `chr`. i fixed it. 
+2019-02-18T22:40:20Z			those 3 things are not quite correct. python have functions and methods as first class values, so you can do 
+
+```diff
+- for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches+ for meth in (self.unicode_name_matches, back_latex_name_matches, back_unicode_name_matches, self.fwd_unicode_match``and it will work better.  
+2019-02-18T22:48:59Z			there is one more issue if we run the test here. 
+we can see that if `[x for x in names if x.startswith(s)]` is empty, then we should not return `s` but an empty string. 
+
+this might be a bug somewhere else in ipython, but it breaks the test suite. i can fix it like so : 
+```diff
+@ completer.py:2076 @ def fwd_unicode_match(self, text:str) -> tuple[str, list]         # if text starts with slash
+         if slashpos > -1             s = text[slashpos+1:-            return s, [x for x in names if x.startswith(s)+            candidates = [x for x in names if x.startswith(s)+            if candidates+                return s, [x for x in names if x.startswith(s)+            else+                return '', (         # if text does not start with slash
+         else-            return u'', [+            return u'', (``` 
+2019-01-06T17:51:23Z			tip: endswith support multiple values, so you could do `full_filename.endswith(('.ipy', 'ipynb', '.py'))`... 
+2019-01-06T17:51:23Z			tip: endswith support multiple values, so you could do `full_filename.endswith(('.ipy', 'ipynb', '.py'))`... 
+2018-12-06T18:02:40Z			+1 we likely want to remind user they might need to restart the kernel.  
+2018-12-06T18:02:40Z			+1 we likely want to remind user they might need to restart the kernel.  
+2018-11-03T00:50:53Z			you've kept `parts` here, which does not exist any more. did you mean to replace with `object_parts`same bellow with `file_parts` instead. 
+2018-11-03T00:50:53Z			you've kept `parts` here, which does not exist any more. did you mean to replace with `object_parts`same bellow with `file_parts` instead. 
+2018-10-26T04:37:15Z			i'm thanks, but i'm pretty at least some of these are correct: 
+
+``in [1]: from ipython.terminal.interactiveshell import terminalinteractiveshell, interactiveshell
+
+in [2]: terminalinteractiveshell.highlighting_style_overrides
+out[2]: <traitlets.traitlets.dict at 0x105691eb8in [3]: interactiveshell.highlighting_style_overrides
+--------------------------------------------------------------------------attributeerror                            traceback (most recent call last<ipython-input-3-e268df97a2b4> in <module----> 1 interactiveshell.highlighting_style_overrides
+
+attributeerror: type object 'interactiveshell' has no attribute 'highlighting_style_overrides``note that there is __both__ terminalinteractiveshell and interactiveshell, the former one used in terminal ipython, the later one inherited from in ipykernel to connect to – for example – the notebook.  
+2018-10-26T04:37:15Z			i'm thanks, but i'm pretty at least some of these are correct: 
+
+``in [1]: from ipython.terminal.interactiveshell import terminalinteractiveshell, interactiveshell
+
+in [2]: terminalinteractiveshell.highlighting_style_overrides
+out[2]: <traitlets.traitlets.dict at 0x105691eb8in [3]: interactiveshell.highlighting_style_overrides
+--------------------------------------------------------------------------attributeerror                            traceback (most recent call last<ipython-input-3-e268df97a2b4> in <module----> 1 interactiveshell.highlighting_style_overrides
+
+attributeerror: type object 'interactiveshell' has no attribute 'highlighting_style_overrides``note that there is __both__ terminalinteractiveshell and interactiveshell, the former one used in terminal ipython, the later one inherited from in ipykernel to connect to – for example – the notebook.  
+2018-10-21T19:26:43Z			we should actually list things here.  
+2018-10-21T19:27:36Z			typo in do**c**test
+```suggestion
+for more information on @supress and @doctest decorators, please refer to the end of this file in 
+``` 
+2018-10-21T20:51:42Z			i'll have to reread the code, but my guess it's `@doctest` or `@savefig`. 
+2018-10-21T20:52:13Z			sure, or you can apparently "accept" in the github ui. but it's brand new so i haven't used it before.  
+2018-10-21T20:59:10Z			i think the error is just this trailing quote.  
+2018-10-21T20:59:17Z			```suggestion
+   @doctest
+``` 
+2018-10-21T19:26:43Z			we should actually list things here.  
+2018-10-21T19:27:36Z			typo in do**c**test
+```suggestion
+for more information on @supress and @doctest decorators, please refer to the end of this file in 
+``` 
+2018-10-21T20:51:42Z			i'll have to reread the code, but my guess it's `@doctest` or `@savefig`. 
+2018-10-21T20:52:13Z			sure, or you can apparently "accept" in the github ui. but it's brand new so i haven't used it before.  
+2018-10-21T20:59:10Z			i think the error is just this trailing quote.  
+2018-10-21T20:59:17Z			```suggestion
+   @doctest
+``` 
+2018-10-21T20:46:06Z			```suggestion
+    # convert if using cpython tokenize
+    # upstream bug was fixed in python 3.7.1, so once we drop 3.7 this can likely be removed. 
+``` 
+2018-10-22T14:43:10Z			if you want to keep the oder i believe you can compare list comprehensions``[t.type for t in tokens_by_line[-1]][-2:] == [tokenize.dedent, tokenize.endmarker````in [4]: [0, 1,2][-2:] == [1, 2out[4]: true
+``` 
+2018-10-21T20:46:06Z			```suggestion
+    # convert if using cpython tokenize
+    # upstream bug was fixed in python 3.7.1, so once we drop 3.7 this can likely be removed. 
+``` 
+2018-10-22T14:43:10Z			if you want to keep the oder i believe you can compare list comprehensions``[t.type for t in tokens_by_line[-1]][-2:] == [tokenize.dedent, tokenize.endmarker````in [4]: [0, 1,2][-2:] == [1, 2out[4]: true
+``` 
+2018-10-21T01:06:51Z			forgotten debug ? 
+```suggestion
+
+``` 
+2018-10-21T01:06:51Z			forgotten debug ? 
+```suggestion
+
+``` 
+2018-10-21T15:33:54Z			yes, feel free to make any replacement you feel is better.  
+2018-10-21T17:37:05Z			no, that is just an example on how to use `savefig`. do what you can, even partially. if it's annoying or confusing send what you have and feel free to move on to something more interesting. 
+2018-10-21T17:38:26Z			i think chris was suggesting refactoring and being clearer with heading/subheading. 
+
+you can see the rendered version [there](https://ipython.readthedocs.io/en/latest/development/ipython_directive.html), there is a lot of duplicate information and organisational issues.  
+2018-10-21T15:33:54Z			yes, feel free to make any replacement you feel is better.  
+2018-10-21T17:37:05Z			no, that is just an example on how to use `savefig`. do what you can, even partially. if it's annoying or confusing send what you have and feel free to move on to something more interesting. 
+2018-10-21T17:38:26Z			i think chris was suggesting refactoring and being clearer with heading/subheading. 
+
+you can see the rendered version [there](https://ipython.readthedocs.io/en/latest/development/ipython_directive.html), there is a lot of duplicate information and organisational issues.  
+2018-10-25T17:07:10Z			yes, i understand the point i was just doing and dumb listing of the changes from a user point of view, and it still lead to the `ε` character being untypable with the latex equivalent. you can still use `\greek small letter epsilon<tab>` but i want to properly document it. appologies if it was a confusing comment 
+2018-10-25T17:07:10Z			yes, i understand the point i was just doing and dumb listing of the changes from a user point of view, and it still lead to the `ε` character being untypable with the latex equivalent. you can still use `\greek small letter epsilon<tab>` but i want to properly document it. appologies if it was a confusing comment 
+2018-10-14T17:44:45Z			+1 good job ! 
+2018-10-14T17:44:45Z			+1 good job ! 
+2018-10-13T22:38:10Z			you can actually move that out of the for loop if you really want.  
+2018-10-13T22:43:53Z			that seem more uniform, though that will conflict will already existing pr it would be better to do as separate changes. i'll see which pr is easier to apply first.  
+2018-10-13T22:45:45Z			that's typically a change that's generally considered good, though this function is relatively simple, and that will make any further backport or history digging around this file more difficult. i dont' think it is really necessary.  
+2018-10-13T22:46:01Z			i dont' think a space is needed here.  
+2018-10-13T22:49:19Z			seem ok, here but not strictly equivalent. what if term_title is false-ish ? like empty string,  none, or empty list in a subclass ? does `toggle_set_term_title` allow non boolean values ?  
+2018-10-13T22:55:19Z			that seem strait forward here, but actually the semantics are different, and i even believe some other branches in the code are wrong, in particular``style_overrides = _style_overrides_linux
+``` 
+
+and 
+
+``style_overrides = _style_overrides_light_bg
+``indeed, later on we do `style_overrides.update(self.highlighting_style_overrides)`, so if you assign something to `style_override` instead of using `update(...)` you will mutate the original. `_style_overrides_light_bg`, `_style_overrides_linux` and with your patch `_style_overrides_windows` which is surprising. 
+
+so yes to deport them as global variable, but we need to be sure of what update() vs  assing will do. 
+2018-10-13T22:38:10Z			you can actually move that out of the for loop if you really want.  
+2018-10-13T22:43:53Z			that seem more uniform, though that will conflict will already existing pr it would be better to do as separate changes. i'll see which pr is easier to apply first.  
+2018-10-13T22:45:45Z			that's typically a change that's generally considered good, though this function is relatively simple, and that will make any further backport or history digging around this file more difficult. i dont' think it is really necessary.  
+2018-10-13T22:46:01Z			i dont' think a space is needed here.  
+2018-10-13T22:49:19Z			seem ok, here but not strictly equivalent. what if term_title is false-ish ? like empty string,  none, or empty list in a subclass ? does `toggle_set_term_title` allow non boolean values ?  
+2018-10-13T22:55:19Z			that seem strait forward here, but actually the semantics are different, and i even believe some other branches in the code are wrong, in particular``style_overrides = _style_overrides_linux
+``` 
+
+and 
+
+``style_overrides = _style_overrides_light_bg
+``indeed, later on we do `style_overrides.update(self.highlighting_style_overrides)`, so if you assign something to `style_override` instead of using `update(...)` you will mutate the original. `_style_overrides_light_bg`, `_style_overrides_linux` and with your patch `_style_overrides_windows` which is surprising. 
+
+so yes to deport them as global variable, but we need to be sure of what update() vs  assing will do. 
+2018-11-11T00:35:42Z			sure. do you want to send a pr ? i guess we can either let the user define a value for both or a format string. 
+2018-11-11T00:35:42Z			sure. do you want to send a pr ? i guess we can either let the user define a value for both or a format string. 
+2018-10-12T23:09:07Z			forgotten debug print ?  
+2018-10-12T23:10:23Z			i guess you mean types annotations that you removed , i thing that can be trimmed now.  
+2018-10-12T23:09:07Z			forgotten debug print ?  
+2018-10-12T23:10:23Z			i guess you mean types annotations that you removed , i thing that can be trimmed now.  
+2018-10-06T17:44:18Z			i'm just going to add some "ok", to follow where i am in the review for myself. 
+2018-10-06T17:44:26Z			ok. 
+2018-10-06T17:45:01Z			ok 
+2018-10-06T17:45:07Z			ok 
+2018-10-06T17:46:27Z			ok 
+2018-10-06T17:47:48Z			seem good. looks like we should either ends with 2 \n or none. 
+2018-10-06T17:47:55Z			ok 
+2018-10-06T17:44:18Z			i'm just going to add some "ok", to follow where i am in the review for myself. 
+2018-10-06T17:44:26Z			ok. 
+2018-10-06T17:45:01Z			ok 
+2018-10-06T17:45:07Z			ok 
+2018-10-06T17:46:27Z			ok 
+2018-10-06T17:47:48Z			seem good. looks like we should either ends with 2 \n or none. 
+2018-10-06T17:47:55Z			ok 
+2018-10-03T15:45:31Z			we're py3 only,  so now you can just use `super()` 
+2018-10-03T15:46:13Z			ah i would have use [`assert_warns`](https://docs.pytest.org/en/latest/warnings.html#warns), but that looks good ! 
+2018-10-03T15:46:54Z			wondering if we should use `startswith` and `endswith` that are more efficient and likely more correct, but that looks good.  
+2018-10-03T23:19:18Z			up to you. i'll reopen the linked issue add link to this section for further improvements.  
+2018-10-09T15:05:34Z			ah, yes, sorry, and [this](https://docs.python.org/3/library/unittest.html#unittest.testcase.assertwarns) i just get confused between test runners.  
+2018-10-03T15:45:31Z			we're py3 only,  so now you can just use `super()` 
+2018-10-03T15:46:13Z			ah i would have use [`assert_warns`](https://docs.pytest.org/en/latest/warnings.html#warns), but that looks good ! 
+2018-10-03T15:46:54Z			wondering if we should use `startswith` and `endswith` that are more efficient and likely more correct, but that looks good.  
+2018-10-03T23:19:18Z			up to you. i'll reopen the linked issue add link to this section for further improvements.  
+2018-10-09T15:05:34Z			ah, yes, sorry, and [this](https://docs.python.org/3/library/unittest.html#unittest.testcase.assertwarns) i just get confused between test runners.  
+2018-09-18T08:07:30Z			i know it's unrelated, but i was annoyed to have to fix this on my local machine, with i'm running sphinx with warnings as errors. 
+2018-09-18T08:07:30Z			i know it's unrelated, but i was annoyed to have to fix this on my local machine, with i'm running sphinx with warnings as errors. 
+2018-10-28T18:12:17Z			looks like it, do you want to make a pr? 
+2018-10-28T18:12:17Z			looks like it, do you want to make a pr? 
+2018-09-14T13:21:46Z			both with and without leading `%` works now, but sure.  
+2018-09-14T13:21:46Z			both with and without leading `%` works now, but sure.  
+2018-09-06T10:21:48Z			meh, i need to replace `c` by `d` here, and maybe check that this updates both `c` and `d` classes. 
+2018-09-06T10:27:38Z			that allows to run iptest with a filepath which is a little more confenient for bash autocompletion.  
+2018-09-06T10:21:48Z			meh, i need to replace `c` by `d` here, and maybe check that this updates both `c` and `d` classes. 
+2018-09-06T10:27:38Z			that allows to run iptest with a filepath which is a little more confenient for bash autocompletion.  
+2018-08-16T18:33:42Z			one of them is necessary if we want to have  nested `embed()`.  i can make that optional, i probably added them here to have the test passing.  
+2018-09-04T13:30:24Z			thanks, fixed. 
+2018-08-16T18:33:42Z			one of them is necessary if we want to have  nested `embed()`.  i can make that optional, i probably added them here to have the test passing.  
+2018-09-04T13:30:24Z			thanks, fixed. 
+2018-06-22T05:39:03Z			`--raise-error` (dash instead of underscore) seem more common for flags ?  
+2018-06-22T05:39:03Z			`--raise-error` (dash instead of underscore) seem more common for flags ?  
+2018-06-13T09:25:09Z			> isn't the right fix to re-order the inheritance so the mixin comes firstit fails in different way when swapping order.  i can retry though. 
+ 
+2018-06-13T09:30:20Z			> i can retry thoughhum, some seem to work, it may have been a random failure when i tried. i'll re-check and do that where it works.  
+2018-06-13T17:18:32Z			pfff, pebkac, i was testing without #11174 merged and so was still seing resourcewarnings. 
+2018-06-13T09:25:09Z			> isn't the right fix to re-order the inheritance so the mixin comes firstit fails in different way when swapping order.  i can retry though. 
+ 
+2018-06-13T09:30:20Z			> i can retry thoughhum, some seem to work, it may have been a random failure when i tried. i'll re-check and do that where it works.  
+2018-06-13T17:18:32Z			pfff, pebkac, i was testing without #11174 merged and so was still seing resourcewarnings. 
+2018-04-03T15:35:34Z			yeah, good point. fixed. 
+2018-04-03T15:35:34Z			yeah, good point. fixed. 
+2018-05-17T19:48:52Z			emit deprecation warnign at import time ? 
+2018-05-17T19:49:53Z			generate_token is deprecated/not public. maybe figure out how to use tokenize directly ? or complainc to cpython to undeprecate it cause it is annoying to use.  
+2018-05-17T19:51:49Z			i'm just going to write some +1/ok here and there to have a mark for myself as to what i have already reviewed. 
+2018-05-17T19:54:01Z			potential improvement. let user pass string and compile it as strcan be done later, just thinking at loud. 
+2018-05-17T19:57:45Z			how does that behave with unmatched parenthesis ? does ti need to behave well ? 
+2018-05-17T19:57:57Z			ok. 
+2018-05-17T19:58:10Z			ok 
+2018-05-17T19:59:10Z			i see you are trying types annotations :-)  
+2018-05-17T20:01:25Z			hum, as is, out of context this one give me a headache. i guess the example later will help. maybe one example in the docstring i need to re-read this one later. 
+2018-05-17T20:04:48Z			update from `find the first assignment` to `return the index of the first `=` token in an assignemnt line..i _guess_ the parenthesis thing allow unpacking `(a,b) = foo` ? 
+2018-05-17T20:05:35Z			hum, ok. will reread that one first pass is done. 
+2018-05-17T20:09:15Z			you _may_ be able to make that more readable by using multiple ifs and a `continue` the other question that come to mind about `find the first magic assignment`, is what if there is multiple magics assignments ? 
+2018-05-17T20:12:52Z			premature opt is the root of all evil, still the following seem like it _may_ be a repetitive pattern``        for line in tokens_by_line            assign_ix = _find_assign_op(line            if (assign_ix is not none)                     and (len(line) >= assign_ix + 2) 					and (<token check>)``if this is used by other external transformers, maybe figure out how to extract this logic. 
+2018-05-17T20:15:29Z			ok 
+2018-05-17T22:59:24Z			i'm starting to be worried of attaching priorities to class themselvesshould we register them with a priority ? that seem more flexible. not sure yet, just gut feeling. 
+2018-05-17T23:04:55Z			we likely want to make sure `parenlev` always `>0` (same in other similar method). not sure if it is possible though. 
+2018-05-17T23:07:06Z			i guess that's for debug, it's unused i think. 
+2018-05-17T23:20:10Z			sanity check it is not called more than ~100 times for now?  
+2018-05-17T23:25:46Z			ok. 
+2018-05-17T23:26:37Z			emit deprecation ? 
+2018-05-17T23:33:04Z			ok. 
+2018-05-17T19:48:52Z			emit deprecation warnign at import time ? 
+2018-05-17T19:49:53Z			generate_token is deprecated/not public. maybe figure out how to use tokenize directly ? or complainc to cpython to undeprecate it cause it is annoying to use.  
+2018-05-17T19:51:49Z			i'm just going to write some +1/ok here and there to have a mark for myself as to what i have already reviewed. 
+2018-05-17T19:54:01Z			potential improvement. let user pass string and compile it as strcan be done later, just thinking at loud. 
+2018-05-17T19:57:45Z			how does that behave with unmatched parenthesis ? does ti need to behave well ? 
+2018-05-17T19:57:57Z			ok. 
+2018-05-17T19:58:10Z			ok 
+2018-05-17T19:59:10Z			i see you are trying types annotations :-)  
+2018-05-17T20:01:25Z			hum, as is, out of context this one give me a headache. i guess the example later will help. maybe one example in the docstring i need to re-read this one later. 
+2018-05-17T20:04:48Z			update from `find the first assignment` to `return the index of the first `=` token in an assignemnt line..i _guess_ the parenthesis thing allow unpacking `(a,b) = foo` ? 
+2018-05-17T20:05:35Z			hum, ok. will reread that one first pass is done. 
+2018-05-17T20:09:15Z			you _may_ be able to make that more readable by using multiple ifs and a `continue` the other question that come to mind about `find the first magic assignment`, is what if there is multiple magics assignments ? 
+2018-05-17T20:12:52Z			premature opt is the root of all evil, still the following seem like it _may_ be a repetitive pattern``        for line in tokens_by_line            assign_ix = _find_assign_op(line            if (assign_ix is not none)                     and (len(line) >= assign_ix + 2) 					and (<token check>)``if this is used by other external transformers, maybe figure out how to extract this logic. 
+2018-05-17T20:15:29Z			ok 
+2018-05-17T22:59:24Z			i'm starting to be worried of attaching priorities to class themselvesshould we register them with a priority ? that seem more flexible. not sure yet, just gut feeling. 
+2018-05-17T23:04:55Z			we likely want to make sure `parenlev` always `>0` (same in other similar method). not sure if it is possible though. 
+2018-05-17T23:07:06Z			i guess that's for debug, it's unused i think. 
+2018-05-17T23:20:10Z			sanity check it is not called more than ~100 times for now?  
+2018-05-17T23:25:46Z			ok. 
+2018-05-17T23:26:37Z			emit deprecation ? 
+2018-05-17T23:33:04Z			ok. 
+2018-06-21T20:12:03Z			@willingc your  `7` and `0` keys are either swapped, or you're used to software below 1.0 :-) i've edited a couple of your comments to say `7.0` instead of `0.7` as i think that's what you meant.  
+2018-06-24T20:50:24Z			done. 
+2018-06-24T20:50:44Z			done.  

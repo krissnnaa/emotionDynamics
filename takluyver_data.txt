@@ -1,0 +1,84 @@
+Created Date			 Comments
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats. 
+2019-01-18T16:40:33Z			this last one doesn't quite read right 
+2019-01-19T16:02:27Z			that's the only one i know of; you can search the codebase to see if it's used elsewheregood idea to link to the reference. 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats. 
+2019-01-18T16:40:33Z			this last one doesn't quite read right 
+2019-01-19T16:02:27Z			that's the only one i know of; you can search the codebase to see if it's used elsewheregood idea to link to the reference. 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats. 
+2019-01-18T16:40:33Z			this last one doesn't quite read right 
+2019-01-19T16:02:27Z			that's the only one i know of; you can search the codebase to see if it's used elsewheregood idea to link to the reference. 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats. 
+2019-01-18T16:40:33Z			this last one doesn't quite read right 
+2019-01-19T16:02:27Z			that's the only one i know of; you can search the codebase to see if it's used elsewheregood idea to link to the reference. 
+2018-10-22T13:27:44Z			can this comment explain better what is being converted to what? 
+2018-10-22T13:28:19Z			can we link to the bugs.python.org url for it for reference? i don't know what bug we're working round. 
+2018-10-22T13:30:07Z			not quite as precise, because it ignores the order, but maybe we could simplify the check using sets```python
+if {t.type for t in tokens_by_line[-1]} == {tokenize.dedent, tokenize.endmarker}``` 
+2018-10-22T15:10:43Z			that's a looser check, though - you're ignoring anything but the last two things in the line. 
+2018-10-22T13:27:44Z			can this comment explain better what is being converted to what? 
+2018-10-22T13:28:19Z			can we link to the bugs.python.org url for it for reference? i don't know what bug we're working round. 
+2018-10-22T13:30:07Z			not quite as precise, because it ignores the order, but maybe we could simplify the check using sets```python
+if {t.type for t in tokens_by_line[-1]} == {tokenize.dedent, tokenize.endmarker}``` 
+2018-10-22T15:10:43Z			that's a looser check, though - you're ignoring anything but the last two things in the line. 
+2018-07-23T09:02:45Z			this link is dead because of a change in blog system. :-( 
+2018-07-23T09:02:45Z			this link is dead because of a change in blog system. :-( 
+2018-06-17T09:09:28Z			it's `<n>` that changes to get sufficient accuracy, not `<r>` - and that note should be in the description of the `-n` flagalso, you've got rid of the word *repeat*, which is what the r stands for. 
+2018-06-17T09:09:28Z			it's `<n>` that changes to get sufficient accuracy, not `<r>` - and that note should be in the description of the `-n` flagalso, you've got rid of the word *repeat*, which is what the r stands for. 
+2018-04-30T14:53:19Z			this wording was actually what it was meant to say. 
+2018-04-30T14:53:42Z			let's put brackets around `(data, metadata)` for clarity. 
+2018-04-30T14:54:21Z			i think the typical way to write this is "key-value pairs" 
+2018-04-30T14:54:58Z			`_repr_jpeg_()` - you missed an underscore. 
+2018-04-30T14:53:19Z			this wording was actually what it was meant to say. 
+2018-04-30T14:53:42Z			let's put brackets around `(data, metadata)` for clarity. 
+2018-04-30T14:54:21Z			i think the typical way to write this is "key-value pairs" 
+2018-04-30T14:54:58Z			`_repr_jpeg_()` - you missed an underscore. 
+2018-04-03T08:11:14Z			i don't think we actually need `builtins` here - we can just use `input()` directly, i think. 
+2018-04-03T08:11:14Z			i don't think we actually need `builtins` here - we can just use `input()` directly, i think. 
+2018-03-29T07:41:42Z			can you extend the underline here? i think it needs to be the same length as the heading. 
+2018-03-29T07:41:42Z			can you extend the underline here? i think it needs to be the same length as the heading. 
+2018-03-28T12:12:22Z			it probably needs to be escaped on this line too - this is what goes into the `href`. 
+2018-03-28T12:12:22Z			it probably needs to be escaped on this line too - this is what goes into the `href`. 
+2018-03-13T12:20:37Z			'compiled from source' doesn't really apply to pure python projects like ipython. i'd give examples like "using pip or conda, from github, or as part of a docker container." 
+2018-03-13T12:23:08Z			since all three points start with "information on", let's phrase the bit at the top "please also include information on:" and cut those words from the bullet pointsalso, i'd like the bullet points to start with capital letters  ("how to reproduce..."). 
+2018-03-13T12:26:04Z			ending a paragraph with `...` to signify that these are examples seems a bit too casual for the tone of this message. let's find a way to make it read a bit better. 
+2018-03-13T12:20:37Z			'compiled from source' doesn't really apply to pure python projects like ipython. i'd give examples like "using pip or conda, from github, or as part of a docker container." 
+2018-03-13T12:23:08Z			since all three points start with "information on", let's phrase the bit at the top "please also include information on:" and cut those words from the bullet pointsalso, i'd like the bullet points to start with capital letters  ("how to reproduce..."). 
+2018-03-13T12:26:04Z			ending a paragraph with `...` to signify that these are examples seems a bit too casual for the tone of this message. let's find a way to make it read a bit better. 
+2018-05-17T19:54:37Z			i did ask them to make it official: https://bugs.python.org/issue12486#msg313591
+
+it's been there unchanged for quite a few releases, so i doubt it's in imminent danger of removal. i'll try opening a pr to make it public. 
+2018-05-27T17:08:46Z			not worth adding extra internal complexity to this to save a bit of typing in the 2 places it's used, imo. 
+2018-05-27T17:14:59Z			yup, parentheses do allow unpacking, as well as things like `d[key] = foo`it shouldn't need to handle unmatched closing parentheses, because as far as i know something like `a) = ...` would always be a syntax error. the 'token line' passed in to this function is a logical python line, including multiline statements, so something like this would be processed as one line```python
+ a, b
+) = ..``` 
+2018-05-27T17:16:53Z			yeah, i'll see if i can make this any clearer. 
+2018-05-27T17:26:52Z			i don't think it would help. it could be more readable with a pattern matching dsl - this is finding something like `.* = % .*`. but then we'd have to define and implement a dsl for this, which is a load of extra complexity for a relatively few use cases> what if there is multiple magics assignments then it finds the first one! because magics don't have to be valid python syntax, we can't be sure that the tokenisation will make any sense for subsequent magics. so we find the first one, transform it to valid python syntax, retokenise, find the new first one (i.e. the second in the original code), and repeat. 
+2018-05-27T17:29:26Z			these are the sites that recognise assignment from `a = %magic` and `b = !system`. those are the only two we support, and given how complicated this is, i honestly wouldn't encourage anyone else to try adding more such transformers. it is a bit clumsy, but for n=2, i don't think it's worth trying to abstract it away. 
+2018-05-27T17:32:24Z			it is unused, but i'm inclined to leave it there for debugging. it's not causing any harm by being there. 
+2018-05-27T17:33:05Z			it shouldn't come up in valid python code, and if the code is invalid, all bets are off. but i'll add a check anyway. 
+2018-05-27T17:36:15Z			good point. 
+2018-05-17T19:54:37Z			i did ask them to make it official: https://bugs.python.org/issue12486#msg313591
+
+it's been there unchanged for quite a few releases, so i doubt it's in imminent danger of removal. i'll try opening a pr to make it public. 
+2018-05-27T17:08:46Z			not worth adding extra internal complexity to this to save a bit of typing in the 2 places it's used, imo. 
+2018-05-27T17:14:59Z			yup, parentheses do allow unpacking, as well as things like `d[key] = foo`it shouldn't need to handle unmatched closing parentheses, because as far as i know something like `a) = ...` would always be a syntax error. the 'token line' passed in to this function is a logical python line, including multiline statements, so something like this would be processed as one line```python
+ a, b
+) = ..``` 
+2018-05-27T17:16:53Z			yeah, i'll see if i can make this any clearer. 
+2018-05-27T17:26:52Z			i don't think it would help. it could be more readable with a pattern matching dsl - this is finding something like `.* = % .*`. but then we'd have to define and implement a dsl for this, which is a load of extra complexity for a relatively few use cases> what if there is multiple magics assignments then it finds the first one! because magics don't have to be valid python syntax, we can't be sure that the tokenisation will make any sense for subsequent magics. so we find the first one, transform it to valid python syntax, retokenise, find the new first one (i.e. the second in the original code), and repeat. 
+2018-05-27T17:29:26Z			these are the sites that recognise assignment from `a = %magic` and `b = !system`. those are the only two we support, and given how complicated this is, i honestly wouldn't encourage anyone else to try adding more such transformers. it is a bit clumsy, but for n=2, i don't think it's worth trying to abstract it away. 
+2018-05-27T17:32:24Z			it is unused, but i'm inclined to leave it there for debugging. it's not causing any harm by being there. 
+2018-05-27T17:33:05Z			it shouldn't come up in valid python code, and if the code is invalid, all bets are off. but i'll add a check anyway. 
+2018-05-27T17:36:15Z			good point. 
+2018-06-21T13:30:22Z			my pr was accepted, so `generate_tokens` is documented for python 3.8. https://docs.python.org/3.8/library/tokenize.html#tokenize.generate_tokens 
+2018-01-27T09:54:01Z			would it make sense to put these two lines inside the `error_before_exec` closure? 
+2018-02-12T14:27:02Z			ping @minrk  
+2018-01-27T09:54:01Z			would it make sense to put these two lines inside the `error_before_exec` closure? 
+2018-02-12T14:27:02Z			ping @minrk  
+2018-03-09T13:00:06Z			i'd prefer an `if`; it feels strange to throw an error only to immediately catch it again. 
+2018-03-09T13:00:15Z			don't forget to update the message. 
+2018-04-28T20:10:16Z			i don't think we need this check - the warnings module already takes care of only printing a warning the first time it occurs. 
+2018-03-09T13:00:06Z			i'd prefer an `if`; it feels strange to throw an error only to immediately catch it again. 
+2018-03-09T13:00:15Z			don't forget to update the message. 
+2018-04-28T20:10:16Z			i don't think we need this check - the warnings module already takes care of only printing a warning the first time it occurs. 
