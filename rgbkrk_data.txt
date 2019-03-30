@@ -1,0 +1,25 @@
+Created Date				Comments
+2018-12-06T13:56:37Z			dhirschfeld would this correctly detect being in a conda environment on windows 
+2018-12-06T13:59:19Z			love this organization around args needing y or the prefix 
+2018-12-06T14:33:27Z			this works pretty well the only hidden api surface to this is that this allows the full pip api we likely wouldnt be able to extend this with new args possibly for something ipython  jupyter specific capturing metadata accepting a flag to do soneedless to say im cool with this implementation 
+2018-12-06T13:56:37Z			dhirschfeld would this correctly detect being in a conda environment on windows 
+2018-12-06T13:59:19Z			love this organization around args needing y or the prefix 
+2018-12-06T14:33:27Z			this works pretty well the only hidden api surface to this is that this allows the full pip api we likely wouldnt be able to extend this with new args possibly for something ipython  jupyter specific capturing metadata accepting a flag to do soneedless to say im cool with this implementation 
+2018-08-16T17:33:52Z			is there a chance that this will never run the script where onload or onreadystatechange are called yet thisreadystate is not complete 
+2018-08-16T17:33:52Z			is there a chance that this will never run the script where onload or onreadystatechange are called yet thisreadystate is not complete 
+2019-01-23T18:46:37Z			  b toggle it off by default basically consider the current behavior a bad enough bug worth breaking backward expectations of behavior users could still configure it to force on if desired and a naked debug call with no exception storage active could print an informative error toggling it on and explaining the situationjust leaving a note that im in favor of b especially because the source of kernel death is really hard to track down in these cases it makes me wonder about all the times ive had to tell a user to just restart when it was something they could have diagnosed themselves 
+2019-01-23T18:46:37Z			  b toggle it off by default basically consider the current behavior a bad enough bug worth breaking backward expectations of behavior users could still configure it to force on if desired and a naked debug call with no exception storage active could print an informative error toggling it on and explaining the situationjust leaving a note that im in favor of b especially because the source of kernel death is really hard to track down in these cases it makes me wonder about all the times ive had to tell a user to just restart when it was something they could have diagnosed themselves 
+2019-01-23T18:46:37Z			  b toggle it off by default basically consider the current behavior a bad enough bug worth breaking backward expectations of behavior users could still configure it to force on if desired and a naked debug call with no exception storage active could print an informative error toggling it on and explaining the situationjust leaving a note that im in favor of b especially because the source of kernel death is really hard to track down in these cases it makes me wonder about all the times ive had to tell a user to just restart when it was something they could have diagnosed themselves 
+2019-01-23T18:46:37Z			  b toggle it off by default basically consider the current behavior a bad enough bug worth breaking backward expectations of behavior users could still configure it to force on if desired and a naked debug call with no exception storage active could print an informative error toggling it on and explaining the situationjust leaving a note that im in favor of b especially because the source of kernel death is really hard to track down in these cases it makes me wonder about all the times ive had to tell a user to just restart when it was something they could have diagnosed themselves 
+2018-12-06T13:51:58Z			thank you so much jakevdp  
+2018-12-06T21:43:37Z			carreau mseal selfshellsystem is one of the calls that doesnt error when a shell command happens right we should make sure this causes an error so that use of this magic will stop execution in nbconvert papermill and other runall use cases 
+2018-12-10T23:25:27Z			thanks yall 
+2018-12-06T13:51:58Z			thank you so much jakevdp  
+2018-12-06T21:43:37Z			carreau mseal selfshellsystem is one of the calls that doesnt error when a shell command happens right we should make sure this causes an error so that use of this magic will stop execution in nbconvert papermill and other runall use cases 
+2018-12-10T23:25:27Z			thanks yall 
+2018-08-23T04:35:08Z			_fantastic_ 
+2018-08-23T04:35:08Z			_fantastic_ 
+2018-04-17T23:24:41Z			this ended up affecting both nbconvert and papermill with python 2x kernels 
+2018-05-02T17:29:08Z			this will target a 56x milestone right 
+2018-04-17T23:24:41Z			this ended up affecting both nbconvert and papermill with python 2x kernels 
+2018-05-02T17:29:08Z			this will target a 56x milestone right 

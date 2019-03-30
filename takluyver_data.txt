@@ -1,0 +1,234 @@
+Created Date				Comments
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats 
+2019-01-18T16:40:33Z			this last one doesnt quite read right 
+2019-01-19T16:02:27Z			thats the only one i know of you can search the codebase to see if its used elsewheregood idea to link to the reference 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats 
+2019-01-18T16:40:33Z			this last one doesnt quite read right 
+2019-01-19T16:02:27Z			thats the only one i know of you can search the codebase to see if its used elsewheregood idea to link to the reference 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats 
+2019-01-18T16:40:33Z			this last one doesnt quite read right 
+2019-01-19T16:02:27Z			thats the only one i know of you can search the codebase to see if its used elsewheregood idea to link to the reference 
+2019-01-18T16:39:45Z			it would be good to have a summary explaining that these provide convenient ways to use the text in different formats 
+2019-01-18T16:40:33Z			this last one doesnt quite read right 
+2019-01-19T16:02:27Z			thats the only one i know of you can search the codebase to see if its used elsewheregood idea to link to the reference 
+2018-10-22T13:27:44Z			can this comment explain better what is being converted to what 
+2018-10-22T13:28:19Z			can we link to the bugspythonorg url for it for reference i dont know what bug were working round 
+2018-10-22T13:30:07Z			not quite as precise because it ignores the order but maybe we could simplify the check using setspythonif ttype for t in tokens_by_line1  tokenizededent tokenizeendmarker 
+2018-10-22T15:10:43Z			thats a looser check though  youre ignoring anything but the last two things in the line 
+2018-10-22T13:27:44Z			can this comment explain better what is being converted to what 
+2018-10-22T13:28:19Z			can we link to the bugspythonorg url for it for reference i dont know what bug were working round 
+2018-10-22T13:30:07Z			not quite as precise because it ignores the order but maybe we could simplify the check using setspythonif ttype for t in tokens_by_line1  tokenizededent tokenizeendmarker 
+2018-10-22T15:10:43Z			thats a looser check though  youre ignoring anything but the last two things in the line 
+2018-07-23T09:02:45Z			this link is dead because of a change in blog system  
+2018-07-23T09:02:45Z			this link is dead because of a change in blog system  
+2018-06-17T09:09:28Z			its n that changes to get sufficient accuracy not r  and that note should be in the description of the n flagalso youve got rid of the word repeat which is what the r stands for 
+2018-06-17T09:09:28Z			its n that changes to get sufficient accuracy not r  and that note should be in the description of the n flagalso youve got rid of the word repeat which is what the r stands for 
+2018-04-30T14:53:19Z			this wording was actually what it was meant to say 
+2018-04-30T14:53:42Z			lets put brackets around data metadata for clarity 
+2018-04-30T14:54:21Z			i think the typical way to write this is keyvalue pairs 
+2018-04-30T14:54:58Z			_repr_jpeg_  you missed an underscore 
+2018-04-30T14:53:19Z			this wording was actually what it was meant to say 
+2018-04-30T14:53:42Z			lets put brackets around data metadata for clarity 
+2018-04-30T14:54:21Z			i think the typical way to write this is keyvalue pairs 
+2018-04-30T14:54:58Z			_repr_jpeg_  you missed an underscore 
+2018-04-03T08:11:14Z			i dont think we actually need builtins here  we can just use input directly i think 
+2018-04-03T08:11:14Z			i dont think we actually need builtins here  we can just use input directly i think 
+2018-03-29T07:41:42Z			can you extend the underline here i think it needs to be the same length as the heading 
+2018-03-29T07:41:42Z			can you extend the underline here i think it needs to be the same length as the heading 
+2018-03-28T12:12:22Z			it probably needs to be escaped on this line too  this is what goes into the href 
+2018-03-28T12:12:22Z			it probably needs to be escaped on this line too  this is what goes into the href 
+2018-03-13T12:20:37Z			compiled from source doesnt really apply to pure python projects like ipython id give examples like using pip or conda from github or as part of a docker container 
+2018-03-13T12:23:08Z			since all three points start with information on lets phrase the bit at the top please also include information on and cut those words from the bullet pointsalso id like the bullet points to start with capital letters  how to reproduce 
+2018-03-13T12:26:04Z			ending a paragraph with  to signify that these are examples seems a bit too casual for the tone of this message lets find a way to make it read a bit better 
+2018-03-13T12:20:37Z			compiled from source doesnt really apply to pure python projects like ipython id give examples like using pip or conda from github or as part of a docker container 
+2018-03-13T12:23:08Z			since all three points start with information on lets phrase the bit at the top please also include information on and cut those words from the bullet pointsalso id like the bullet points to start with capital letters  how to reproduce 
+2018-03-13T12:26:04Z			ending a paragraph with  to signify that these are examples seems a bit too casual for the tone of this message lets find a way to make it read a bit better 
+2018-05-17T19:54:37Z			i did ask them to make it official httpsbugspythonorgissue12486msg313591its been there unchanged for quite a few releases so i doubt its in imminent danger of removal ill try opening a pr to make it public 
+2018-05-27T17:08:46Z			not worth adding extra internal complexity to this to save a bit of typing in the 2 places its used imo 
+2018-05-27T17:14:59Z			yup parentheses do allow unpacking as well as things like dkey  fooit shouldnt need to handle unmatched closing parentheses because as far as i know something like a   would always be a syntax error the token line passed in to this function is a logical python line including multiline statements so something like this would be processed as one linepython a b   
+2018-05-27T17:16:53Z			yeah ill see if i can make this any clearer 
+2018-05-27T17:26:52Z			i dont think it would help it could be more readable with a pattern matching dsl  this is finding something like     but then wed have to define and implement a dsl for this which is a load of extra complexity for a relatively few use cases what if there is multiple magics assignments then it finds the first one because magics dont have to be valid python syntax we cant be sure that the tokenisation will make any sense for subsequent magics so we find the first one transform it to valid python syntax retokenise find the new first one ie the second in the original code and repeat 
+2018-05-27T17:29:26Z			these are the sites that recognise assignment from a  magic and b  system those are the only two we support and given how complicated this is i honestly wouldnt encourage anyone else to try adding more such transformers it is a bit clumsy but for n2 i dont think its worth trying to abstract it away 
+2018-05-27T17:32:24Z			it is unused but im inclined to leave it there for debugging its not causing any harm by being there 
+2018-05-27T17:33:05Z			it shouldnt come up in valid python code and if the code is invalid all bets are off but ill add a check anyway 
+2018-05-27T17:36:15Z			good point 
+2018-05-17T19:54:37Z			i did ask them to make it official httpsbugspythonorgissue12486msg313591its been there unchanged for quite a few releases so i doubt its in imminent danger of removal ill try opening a pr to make it public 
+2018-05-27T17:08:46Z			not worth adding extra internal complexity to this to save a bit of typing in the 2 places its used imo 
+2018-05-27T17:14:59Z			yup parentheses do allow unpacking as well as things like dkey  fooit shouldnt need to handle unmatched closing parentheses because as far as i know something like a   would always be a syntax error the token line passed in to this function is a logical python line including multiline statements so something like this would be processed as one linepython a b   
+2018-05-27T17:16:53Z			yeah ill see if i can make this any clearer 
+2018-05-27T17:26:52Z			i dont think it would help it could be more readable with a pattern matching dsl  this is finding something like     but then wed have to define and implement a dsl for this which is a load of extra complexity for a relatively few use cases what if there is multiple magics assignments then it finds the first one because magics dont have to be valid python syntax we cant be sure that the tokenisation will make any sense for subsequent magics so we find the first one transform it to valid python syntax retokenise find the new first one ie the second in the original code and repeat 
+2018-05-27T17:29:26Z			these are the sites that recognise assignment from a  magic and b  system those are the only two we support and given how complicated this is i honestly wouldnt encourage anyone else to try adding more such transformers it is a bit clumsy but for n2 i dont think its worth trying to abstract it away 
+2018-05-27T17:32:24Z			it is unused but im inclined to leave it there for debugging its not causing any harm by being there 
+2018-05-27T17:33:05Z			it shouldnt come up in valid python code and if the code is invalid all bets are off but ill add a check anyway 
+2018-05-27T17:36:15Z			good point 
+2018-06-21T13:30:22Z			my pr was accepted so generate_tokens is documented for python 38 httpsdocspythonorg38librarytokenizehtmltokenizegenerate_tokens 
+2018-01-27T09:54:01Z			would it make sense to put these two lines inside the error_before_exec closure 
+2018-02-12T14:27:02Z			ping minrk  
+2018-01-27T09:54:01Z			would it make sense to put these two lines inside the error_before_exec closure 
+2018-02-12T14:27:02Z			ping minrk  
+2018-03-09T13:00:06Z			id prefer an if it feels strange to throw an error only to immediately catch it again 
+2018-03-09T13:00:15Z			dont forget to update the message 
+2018-04-28T20:10:16Z			i dont think we need this check  the warnings module already takes care of only printing a warning the first time it occurs 
+2018-03-09T13:00:06Z			id prefer an if it feels strange to throw an error only to immediately catch it again 
+2018-03-09T13:00:15Z			dont forget to update the message 
+2018-04-28T20:10:16Z			i dont think we need this check  the warnings module already takes care of only printing a warning the first time it occurs 
+2019-01-18T17:01:30Z			did you get round to filing the bug report about this 
+2019-01-18T17:01:30Z			did you get round to filing the bug report about this 
+2019-01-18T17:01:30Z			did you get round to filing the bug report about this 
+2019-01-18T17:01:30Z			did you get round to filing the bug report about this 
+2018-10-22T14:58:41Z			hello yup its an unfortunate time to be busy on github ive been keeping an eye on the status most of the day it seems to be mostly back to normal now 
+2018-10-22T14:58:41Z			hello yup its an unfortunate time to be busy on github ive been keeping an eye on the status most of the day it seems to be mostly back to normal now 
+2019-01-18T17:03:58Z			thanks the necessary feature is in prompt_toolkit 207 
+2019-01-18T17:03:58Z			thanks the necessary feature is in prompt_toolkit 207 
+2018-06-17T09:16:48Z			thanks 
+2018-06-17T09:21:19Z			looks like the problem was introduced by the prompt_toolkit 2 work for 70 so it doesnt affect 6x 
+2018-06-17T09:16:48Z			thanks 
+2018-06-17T09:21:19Z			looks like the problem was introduced by the prompt_toolkit 2 work for 70 so it doesnt affect 6x 
+2018-06-17T09:19:55Z			thanksif we remember to set the milestone before merging we have a bot that will do the backport avoiding the need to do it manually in this case we forgot that 
+2018-06-17T09:19:55Z			thanksif we remember to set the milestone before merging we have a bot that will do the backport avoiding the need to do it manually in this case we forgot that 
+2018-06-10T10:56:08Z			thanks i assume youve tested this locallyyou neatly got the pr number 100 greater than the issue youre fixing 
+2018-06-10T15:11:47Z			thanks 
+2018-06-10T10:56:08Z			thanks i assume youve tested this locallyyou neatly got the pr number 100 greater than the issue youre fixing 
+2018-06-10T15:11:47Z			thanks 
+2018-06-09T19:01:16Z			thanks 
+2018-06-09T19:01:16Z			thanks 
+2018-06-07T20:44:30Z			the remaining failure is in generating the shortcuts list for the docs if anyone wants to update that scripthttpsgithubcomipythonipythonblobmasterdocsautogen_shortcutspy 
+2018-06-12T10:05:21Z			thanks i applied that patch 
+2018-06-17T10:28:12Z			im not sure confused  its ended up being a fairly big change which probably wont backport cleanly and may cause other problemstheres a larger shift in the python world towards each application having its own dependencies installed in a separate environment ipython doesnt entirely fit with that because its not just any application  you want it installed in the same environment as the modules youre working with but then prompt_toolkit is a module thats largely useful only for applicationsso for now i think im inclined to push forwards towards 70 and see how things go ipython 57 correctly specifies the versions of prompt_toolkit it works with so its not a bug that its incompatible with newer versions 
+2018-06-07T20:44:30Z			the remaining failure is in generating the shortcuts list for the docs if anyone wants to update that scripthttpsgithubcomipythonipythonblobmasterdocsautogen_shortcutspy 
+2018-06-12T10:05:21Z			thanks i applied that patch 
+2018-06-17T10:28:12Z			im not sure confused  its ended up being a fairly big change which probably wont backport cleanly and may cause other problemstheres a larger shift in the python world towards each application having its own dependencies installed in a separate environment ipython doesnt entirely fit with that because its not just any application  you want it installed in the same environment as the modules youre working with but then prompt_toolkit is a module thats largely useful only for applicationsso for now i think im inclined to push forwards towards 70 and see how things go ipython 57 correctly specifies the versions of prompt_toolkit it works with so its not a bug that its incompatible with newer versions 
+2018-05-30T16:53:25Z			that makes sense 
+2018-05-30T16:53:25Z			that makes sense 
+2018-06-07T20:40:04Z			from the travis docs recent python development branches require openssl 102 as this library is not available for trusty 37dev 38dev and nightly do not work or use outdated archivehttpsdocstraviscicomuserlanguagespythondevelopmentreleasessupportthis issuehttpsgithubcomtraviscitravisciissues9069 suggests that theyre working on getting an ubuntu 1604 image ready but its not quite there yet 
+2018-06-07T20:40:04Z			from the travis docs recent python development branches require openssl 102 as this library is not available for trusty 37dev 38dev and nightly do not work or use outdated archivehttpsdocstraviscicomuserlanguagespythondevelopmentreleasessupportthis issuehttpsgithubcomtraviscitravisciissues9069 suggests that theyre working on getting an ubuntu 1604 image ready but its not quite there yet 
+2018-05-27T10:19:11Z			btw theres no need to make a new pr if you spot another thing you need to change just push to the same branch and the existing pr is updated this is how we work if a reviewer asks for a change as well 
+2018-05-27T10:24:41Z			looks good can i ask you to add a whatsnew snippethttpsgithubcomipythonipythontreemasterdocssourcewhatsnewpr for it 
+2018-05-28T13:05:18Z			hmm the thing about clipping makes me wonder if this is actually a good api eg if you pass in data as 16bit integers which appears to be the native data type of wav files it will clip them to  1 and you wont hear anything usefulmaybe if you dont want the data normalised by max absolute value you should pass in a number to use instead ie in your case you would pass in 10 to say that your waveform is within the range  1 if your data goes outside that range it would then throw an errori dont know what to call that parameter or if that even makes any sense 
+2018-08-09T20:07:39Z			sorry for the delay im happy with the api but im not actually sure that this would raise an error with outofrange values  it looks like numpys type conversion accepts outofrange values and wraps aroundin 15 npint16218 wrapfalse                                          out15 array0 dtypeint16presumably this would result in distorted audio or noise depending on how far beyond the range the numbers are i think throwing an error on unexpected input would be preferable i cant see any functionality in numpy to cast and check for overflows so we may have to construct the array first check it for overflows and then cast to int16 
+2018-08-09T20:12:45Z			and i think an error is preferable to clipping if youre outside either range 1 or int16 theres a good chance that youre on totally the wrong scale not just a little bit off so the resulting audio will be terrible its much easier to figure out the problem from an error message than from mangled audio 
+2019-03-12T20:38:09Z			im fine with option 2 only support floats 1 to 1 option 3 strikes me as offputting complexity as i dont know about the details of the wav format  but if thats preferred by others im happy to review a pri still maintain that outofrange values should cause an error rather than be clipped as above if your data goes beyond  1 it may well be on the wrong scale completely not just slightly out 
+2018-05-27T10:19:11Z			btw theres no need to make a new pr if you spot another thing you need to change just push to the same branch and the existing pr is updated this is how we work if a reviewer asks for a change as well 
+2018-05-27T10:24:41Z			looks good can i ask you to add a whatsnew snippethttpsgithubcomipythonipythontreemasterdocssourcewhatsnewpr for it 
+2018-05-28T13:05:18Z			hmm the thing about clipping makes me wonder if this is actually a good api eg if you pass in data as 16bit integers which appears to be the native data type of wav files it will clip them to  1 and you wont hear anything usefulmaybe if you dont want the data normalised by max absolute value you should pass in a number to use instead ie in your case you would pass in 10 to say that your waveform is within the range  1 if your data goes outside that range it would then throw an errori dont know what to call that parameter or if that even makes any sense 
+2018-08-09T20:07:39Z			sorry for the delay im happy with the api but im not actually sure that this would raise an error with outofrange values  it looks like numpys type conversion accepts outofrange values and wraps aroundin 15 npint16218 wrapfalse                                          out15 array0 dtypeint16presumably this would result in distorted audio or noise depending on how far beyond the range the numbers are i think throwing an error on unexpected input would be preferable i cant see any functionality in numpy to cast and check for overflows so we may have to construct the array first check it for overflows and then cast to int16 
+2018-08-09T20:12:45Z			and i think an error is preferable to clipping if youre outside either range 1 or int16 theres a good chance that youre on totally the wrong scale not just a little bit off so the resulting audio will be terrible its much easier to figure out the problem from an error message than from mangled audio 
+2019-03-12T20:38:09Z			im fine with option 2 only support floats 1 to 1 option 3 strikes me as offputting complexity as i dont know about the details of the wav format  but if thats preferred by others im happy to review a pri still maintain that outofrange values should cause an error rather than be clipped as above if your data goes beyond  1 it may well be on the wrong scale completely not just slightly out 
+2018-05-27T14:20:41Z			it looks like well be able to remove these workarounds as the consensus seems to be in favour of cpython going back to how this worked in 36 httpsbugspythonorgissue32911  we should keep an eye out for changes in 38 though 
+2018-05-27T14:20:41Z			it looks like well be able to remove these workarounds as the consensus seems to be in favour of cpython going back to how this worked in 36 httpsbugspythonorgissue32911  we should keep an eye out for changes in 38 though 
+2018-05-17T19:56:53Z			this all looks fine though i dont know why wed want to plan a refactor afaik pycolorize has been deprecated for some time in favour of pygments 
+2018-05-17T20:55:23Z			i think some refactoring of ultratb makes sense if that needs refactoring of pycolorize at the same time i think it might be better just to switch ultratb away from pycolorize at the same time but youre the one looking at it so ill trust your judgment 
+2018-05-17T19:56:53Z			this all looks fine though i dont know why wed want to plan a refactor afaik pycolorize has been deprecated for some time in favour of pygments 
+2018-05-17T20:55:23Z			i think some refactoring of ultratb makes sense if that needs refactoring of pycolorize at the same time i think it might be better just to switch ultratb away from pycolorize at the same time but youre the one looking at it so ill trust your judgment 
+2018-05-10T10:46:07Z			thanks 
+2018-05-10T10:46:07Z			thanks 
+2018-05-09T12:45:17Z			i think meeseeks backport functionality needs a bit of debugging 
+2018-05-09T12:45:17Z			i think meeseeks backport functionality needs a bit of debugging 
+2018-05-03T18:42:03Z			carreau im assuming youll look at this at some point  
+2018-05-03T18:43:20Z			ah hang on does it just need a closereopen after you merged the backport of the tests pr 
+2018-05-03T18:42:03Z			carreau im assuming youll look at this at some point  
+2018-05-03T18:43:20Z			ah hang on does it just need a closereopen after you merged the backport of the tests pr 
+2018-05-01T18:29:11Z			thanks 
+2018-05-01T18:29:11Z			thanks 
+2018-05-01T06:47:00Z			hi fperez  im glad you still get time to look at the code from time to time some change in jedi broke one of our tests  its tracked as 11103 and carreau was investigating but possibly someone else needs to take over on that 
+2018-05-01T06:47:00Z			hi fperez  im glad you still get time to look at the code from time to time some change in jedi broke one of our tests  its tracked as 11103 and carreau was investigating but possibly someone else needs to take over on that 
+2018-04-27T10:14:18Z			i think this makes sense the corresponding change to displaypub was in 10837 which shipped in 63 reopening to rerun tests 
+2018-04-27T10:15:43Z			which probably wont help because theyre failing on master as well carreau  did you get anywhere with the test_omit__names failure 
+2018-04-27T10:14:18Z			i think this makes sense the corresponding change to displaypub was in 10837 which shipped in 63 reopening to rerun tests 
+2018-04-27T10:15:43Z			which probably wont help because theyre failing on master as well carreau  did you get anywhere with the test_omit__names failure 
+2018-04-27T10:05:12Z			thanks 
+2018-04-27T10:05:12Z			thanks 
+2018-04-11T10:34:13Z			thanks 
+2018-04-11T10:34:13Z			thanks 
+2018-04-06T08:34:54Z			i agreed this course yesterday with carreau  who has been driving the completions work ive added the 631 changelog single entry to this pr for simplicity 
+2018-04-06T08:40:32Z			reopening to rerun tests on appveyor because i dont have a button to do that directlyhas anyone ever worked out appveyors permissions  
+2018-04-06T08:34:54Z			i agreed this course yesterday with carreau  who has been driving the completions work ive added the 631 changelog single entry to this pr for simplicity 
+2018-04-06T08:40:32Z			reopening to rerun tests on appveyor because i dont have a button to do that directlyhas anyone ever worked out appveyors permissions  
+2018-04-03T18:38:36Z			1  
+2018-04-03T18:38:36Z			1  
+2018-04-02T09:42:28Z			merging this because im trying to make a release and it seems harmless famous last words 
+2018-04-02T09:42:28Z			merging this because im trying to make a release and it seems harmless famous last words 
+2018-04-01T18:24:29Z			i agree i put some ideas about how to do this check more robustly in 11064 
+2018-04-01T19:48:51Z			thanks this was the last thing open for 63 is there anything else you can see that should happen before a release if not ill try to get 63 and 55 out tomorrow 
+2018-04-01T18:24:29Z			i agree i put some ideas about how to do this check more robustly in 11064 
+2018-04-01T19:48:51Z			thanks this was the last thing open for 63 is there anything else you can see that should happen before a release if not ill try to get 63 and 55 out tomorrow 
+2018-03-29T21:07:42Z			thanks 
+2018-03-29T21:07:42Z			thanks 
+2018-03-28T15:29:09Z			thanks looks good 
+2018-03-28T15:29:09Z			thanks looks good 
+2018-03-28T08:35:57Z			thanks 
+2018-03-28T12:00:26Z			a lot of attributes in our code are like that  not explicitly private but not documented either so its not really defined whether users can rely on them or not in practice wed try not to break something like changing filelinkpath unless there was a good reason to 
+2018-03-28T08:35:57Z			thanks 
+2018-03-28T12:00:26Z			a lot of attributes in our code are like that  not explicitly private but not documented either so its not really defined whether users can rely on them or not in practice wed try not to break something like changing filelinkpath unless there was a good reason to 
+2018-03-23T12:16:39Z			thanks 
+2018-03-23T12:19:09Z			done a manual backport to 5x 
+2018-03-23T12:16:39Z			thanks 
+2018-03-23T12:19:09Z			done a manual backport to 5x 
+2018-03-20T17:17:21Z			thanks 
+2018-03-20T17:17:21Z			thanks 
+2018-03-13T15:16:56Z			thanks 
+2018-03-13T15:16:56Z			thanks 
+2018-03-13T17:11:10Z			as this is a breaking change and the system i built last time round was rather convoluted i hope someone can look at it a bit rather than trusting me  a good place to start might be the updated doc pagehttpsgithubcomtakluyveripythonblob96b86fb221893f13ba26644098edc4a20cdc0669docssourceconfiginputtransformsrst about the transformation frameworki think our input transformation machinery has always used something like a sansio design even before that was a thing 
+2018-03-13T17:15:02Z			thanks carol it is a big pr 
+2018-03-29T08:52:11Z			ping willingc were you able to keep running with this branch did you encounter any anomalies 
+2018-04-02T17:36:12Z			thanks carol  
+2018-05-27T18:05:17Z			deprecation warnings id like to make at least one release with the new machinery in place before the old ones start warning otherwise its a pain for packages that need to support the old and new versions for some period of time nbconvert is one such package for instanceconcerns about extensibility eg priority attributes i know its not great to be honest although i hope this is an improvement on the old api its still complicated enough that i would advise anyone to avoid extending the syntax unless theres really no other option maybe we should define a more restrictive api thats safer to buildwould it be worth doing a survey of who currently extends input transformation there are only a couple of use cases im aware of that really need text transformation as opposed to ast transformation converting float literals to decimals before they are parsed and represented as a binary float this is transforming already valid python syntax into something different which is much easier than what we need to do in transforming code thats not already valid python theres a very old extensionhttpsbitbucketorgbirkenfeldipythonphysics that allows for calculations with uncertainties and units m  80  5 kg imo at least the units part would be more idiomatic as multiplication 80  kg than a special syntax though ive got no good answer for the uncertainties parton reflection id like ipython to get out of being a framework for people to build custom pythonlike languages its a pretty bad framework for that and doing it well is a hard problem that were not really trying to solve there are much smarter people than me working on parser technology 
+2018-05-27T20:04:05Z			if pendingdeprecationwarning shows by default the same argument applies to it  its annoying to have tools warning when they cant yet migrate if they dont show by default i dont think theres much point in putting them therei think i just dont have your faith that clever use of deprecation warnings will help anything  
+2018-06-21T13:14:20Z			ive come back to this and simplified the extension interface now there are just two points to plug in string transformers which work on a list of lines  plus ast transformers which are unchangedthe complex tokenbased transformation machinery which turns magics and system commands into valid python code is now essentially a black box there is no supported interface to extend or modify that that gives us the chance to change it in the future without needing to worry about breaking peoples code again 
+2018-06-22T09:49:13Z			thanks willingc for the detailed review i think ive basically applied all of your suggestions 
+2018-09-01T20:59:51Z			thanks for fixing up the conflicts i would be happy to see this land though im not looking forward to finding out what the change has broken 
+2018-09-02T07:27:11Z			pdoes saying the bots name and the word excited in the same comment trigger that 
+2018-03-13T17:11:10Z			as this is a breaking change and the system i built last time round was rather convoluted i hope someone can look at it a bit rather than trusting me  a good place to start might be the updated doc pagehttpsgithubcomtakluyveripythonblob96b86fb221893f13ba26644098edc4a20cdc0669docssourceconfiginputtransformsrst about the transformation frameworki think our input transformation machinery has always used something like a sansio design even before that was a thing 
+2018-03-13T17:15:02Z			thanks carol it is a big pr 
+2018-03-29T08:52:11Z			ping willingc were you able to keep running with this branch did you encounter any anomalies 
+2018-04-02T17:36:12Z			thanks carol  
+2018-05-27T18:05:17Z			deprecation warnings id like to make at least one release with the new machinery in place before the old ones start warning otherwise its a pain for packages that need to support the old and new versions for some period of time nbconvert is one such package for instanceconcerns about extensibility eg priority attributes i know its not great to be honest although i hope this is an improvement on the old api its still complicated enough that i would advise anyone to avoid extending the syntax unless theres really no other option maybe we should define a more restrictive api thats safer to buildwould it be worth doing a survey of who currently extends input transformation there are only a couple of use cases im aware of that really need text transformation as opposed to ast transformation converting float literals to decimals before they are parsed and represented as a binary float this is transforming already valid python syntax into something different which is much easier than what we need to do in transforming code thats not already valid python theres a very old extensionhttpsbitbucketorgbirkenfeldipythonphysics that allows for calculations with uncertainties and units m  80  5 kg imo at least the units part would be more idiomatic as multiplication 80  kg than a special syntax though ive got no good answer for the uncertainties parton reflection id like ipython to get out of being a framework for people to build custom pythonlike languages its a pretty bad framework for that and doing it well is a hard problem that were not really trying to solve there are much smarter people than me working on parser technology 
+2018-05-27T20:04:05Z			if pendingdeprecationwarning shows by default the same argument applies to it  its annoying to have tools warning when they cant yet migrate if they dont show by default i dont think theres much point in putting them therei think i just dont have your faith that clever use of deprecation warnings will help anything  
+2018-06-21T13:14:20Z			ive come back to this and simplified the extension interface now there are just two points to plug in string transformers which work on a list of lines  plus ast transformers which are unchangedthe complex tokenbased transformation machinery which turns magics and system commands into valid python code is now essentially a black box there is no supported interface to extend or modify that that gives us the chance to change it in the future without needing to worry about breaking peoples code again 
+2018-06-22T09:49:13Z			thanks willingc for the detailed review i think ive basically applied all of your suggestions 
+2018-09-01T20:59:51Z			thanks for fixing up the conflicts i would be happy to see this land though im not looking forward to finding out what the change has broken 
+2018-09-02T07:27:11Z			pdoes saying the bots name and the word excited in the same comment trigger that 
+2018-03-13T15:53:11Z			ping carreau  do you want to look at this before i merge it 
+2018-03-13T15:53:11Z			ping carreau  do you want to look at this before i merge it 
+2018-03-05T14:21:59Z			thanks 
+2018-03-05T14:21:59Z			thanks 
+2018-03-01T08:11:19Z			hi it looks like youve been experimenting with github im closing this pr since it doesnt actually make sense but let us know if you were trying to achieve something 
+2018-03-01T08:11:19Z			hi it looks like youve been experimenting with github im closing this pr since it doesnt actually make sense but let us know if you were trying to achieve something 
+2018-02-26T13:25:59Z			setting the stacklevel makes sense but id rather not use deprecationwarning because those are invisible in many common circumstances also we have several other deprecated modules in the ipython package  it would be good to keep them consistent 
+2018-02-26T13:25:59Z			setting the stacklevel makes sense but id rather not use deprecationwarning because those are invisible in many common circumstances also we have several other deprecated modules in the ipython package  it would be good to keep them consistent 
+2018-02-05T10:31:24Z			im happy with the bit setting jedi to do casesensitive completion but id rather leave the default presentation as multicolumncc carreau  
+2018-02-12T14:26:31Z			thanks merging we may want to refine this further eg falling back to caseinsensitive search when we find no matches but it sounds like this will be an improvement for most usersthats always a dangerous thing to say if there are people who dont like this change they wont be complaining yet  fingers crossed   
+2018-02-05T10:31:24Z			im happy with the bit setting jedi to do casesensitive completion but id rather leave the default presentation as multicolumncc carreau  
+2018-02-12T14:26:31Z			thanks merging we may want to refine this further eg falling back to caseinsensitive search when we find no matches but it sounds like this will be an improvement for most usersthats always a dangerous thing to say if there are people who dont like this change they wont be complaining yet  fingers crossed   
+2018-02-05T17:16:34Z			cc carreau i suspect that cursor_column is only right if its on the first line of a cell  otherwise we need to translate the linecolumn position into an index which we have a function to do somewhere 
+2018-03-31T11:16:37Z			thanks ive taken this idea and made 11063 which handles multiple lines better although theres another issue with completing inside a compound statement see 11064  
+2018-04-02T12:42:34Z			11063 was merged so ill close this but thanks bjoernpollex for finding where the fix was needed 
+2018-04-03T14:51:24Z			is your jedi version up to date 
+2018-04-03T15:20:57Z			oh i see whats going on the jedi matcher is getting disabled correctly but the completions that are upsetting you are not the ones from jedi  magic and filename completions are generated separatelyas jeremysikes73  said on 10926 the dict_key_matches source does a fair bit of work to figure out its context but arguably this contextsensitivity belongs higher up in the call stack sources filenamespython dict keys should be includedexcludedresultordered according the line contextat present its up to each individual completer to decide when its relevant what we really need is some piece that runs before them figures out what context is relevant to a completion and which completers should be used eg atab  only call the key completerunfortunately this is hard for a variety of reasons our completion code is a thicket of code that people have added over the years to fix specific problems theyre seeing and theres no formal grammar or parser for ipython special syntax like magic functions and every time anything changes in completions people queue up to complain about it because completion is meant to be magic that works out what you want 
+2018-04-04T09:34:12Z			10926 seems like what youre after and its still open so lets use that one 
+2018-02-05T17:16:34Z			cc carreau i suspect that cursor_column is only right if its on the first line of a cell  otherwise we need to translate the linecolumn position into an index which we have a function to do somewhere 
+2018-03-31T11:16:37Z			thanks ive taken this idea and made 11063 which handles multiple lines better although theres another issue with completing inside a compound statement see 11064  
+2018-04-02T12:42:34Z			11063 was merged so ill close this but thanks bjoernpollex for finding where the fix was needed 
+2018-04-03T14:51:24Z			is your jedi version up to date 
+2018-04-03T15:20:57Z			oh i see whats going on the jedi matcher is getting disabled correctly but the completions that are upsetting you are not the ones from jedi  magic and filename completions are generated separatelyas jeremysikes73  said on 10926 the dict_key_matches source does a fair bit of work to figure out its context but arguably this contextsensitivity belongs higher up in the call stack sources filenamespython dict keys should be includedexcludedresultordered according the line contextat present its up to each individual completer to decide when its relevant what we really need is some piece that runs before them figures out what context is relevant to a completion and which completers should be used eg atab  only call the key completerunfortunately this is hard for a variety of reasons our completion code is a thicket of code that people have added over the years to fix specific problems theyre seeing and theres no formal grammar or parser for ipython special syntax like magic functions and every time anything changes in completions people queue up to complain about it because completion is meant to be magic that works out what you want 
+2018-04-04T09:34:12Z			10926 seems like what youre after and its still open so lets use that one 
+2018-01-17T10:50:17Z			thanks looks good to me 
+2018-01-17T10:50:17Z			thanks looks good to me 
+2018-01-18T11:12:36Z			i did have another idea how to achieve this send plain text with some metadata identifying the language and let the frontend do the highlighting if it can httpsgithubcomjupyternbconvertissues363that proposal is more elegant it only sends the data once it allows frontends to highlight in formats the kernel many not know about and it works nicely for converting to formats like rst and markdown which dont include highlighted code themselves but may be rendered into a format which doeshowever this idea can be implemented in ipython and be useful immediately whereas the other one requires changes to several different projects 
+2018-01-18T11:12:36Z			i did have another idea how to achieve this send plain text with some metadata identifying the language and let the frontend do the highlighting if it can httpsgithubcomjupyternbconvertissues363that proposal is more elegant it only sends the data once it allows frontends to highlight in formats the kernel many not know about and it works nicely for converting to formats like rst and markdown which dont include highlighted code themselves but may be rendered into a format which doeshowever this idea can be implemented in ipython and be useful immediately whereas the other one requires changes to several different projects 
+2018-01-09T15:25:12Z			id say its up to matplotlib to pick a better backend in that situationcc tacaswell  
+2018-01-09T16:57:37Z			is it possible to use qt as a backend in a headless environment at all i assumed that was just impossible 
+2018-01-10T17:32:04Z			that makes sense but is the c error coming from something we do with qt or something matplotlib does 
+2018-03-07T11:04:13Z			i think we need to find a better way of checking whether we can use a gui display is for x but qt can also run on top of wayland which doesnt need that environment variable im already running wayland on fedora  at the moment display is still set for the xwayland compatibility layer but i bet that before long someone will be running wayland without the compatibility layer and then the check is wrongideally qt itself should provide some way of checking if it has a display to draw to but at a minimum we should checkpythonosenvirongetdisplay or osenvirongetwayland_display 
+2018-03-09T13:06:14Z			i think the issue that made this particularly a problem with qt is that the error crashes the process i dont know if the integration with other toolkits fails as hard in a headless environment but it would definitely be good if someone could check 
+2018-01-09T15:25:12Z			id say its up to matplotlib to pick a better backend in that situationcc tacaswell  
+2018-01-09T16:57:37Z			is it possible to use qt as a backend in a headless environment at all i assumed that was just impossible 
+2018-01-10T17:32:04Z			that makes sense but is the c error coming from something we do with qt or something matplotlib does 
+2018-03-07T11:04:13Z			i think we need to find a better way of checking whether we can use a gui display is for x but qt can also run on top of wayland which doesnt need that environment variable im already running wayland on fedora  at the moment display is still set for the xwayland compatibility layer but i bet that before long someone will be running wayland without the compatibility layer and then the check is wrongideally qt itself should provide some way of checking if it has a display to draw to but at a minimum we should checkpythonosenvirongetdisplay or osenvirongetwayland_display 
+2018-03-09T13:06:14Z			i think the issue that made this particularly a problem with qt is that the error crashes the process i dont know if the integration with other toolkits fails as hard in a headless environment but it would definitely be good if someone could check 
+2018-01-03T17:49:41Z			some tests assumed our own completion machinery was in use ive fixed them but not very elegantly 
+2018-01-04T10:19:50Z			5x doesnt use jedi right so this should be for 6x 
+2018-01-18T10:04:45Z			can you open a new issue about that i suspect its deliberateish that jedi does caseinsensitive completions but ideally we could be smarter about it i think ipythons own machinery tries to do casesensitive completions first and then caseinsensitive if there were no matches 
+2018-01-03T17:49:41Z			some tests assumed our own completion machinery was in use ive fixed them but not very elegantly 
+2018-01-04T10:19:50Z			5x doesnt use jedi right so this should be for 6x 
+2018-01-18T10:04:45Z			can you open a new issue about that i suspect its deliberateish that jedi does caseinsensitive completions but ideally we could be smarter about it i think ipythons own machinery tries to do casesensitive completions first and then caseinsensitive if there were no matches 
