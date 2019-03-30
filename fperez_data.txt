@@ -1,7 +1,0 @@
-Created Date			 Comments
-2018-05-01T03:17:20Z			to clarify for @zichongkao, it's b/c there's a finite # of these methods that are possible, and an object can provide any subset of them.  but an object can't declare an arbitrary `_repr_foo_` method and expect it to work, the list of which are acceptable is pre-defined by us. 
-2018-05-01T03:19:48Z			+1 
-2018-05-01T03:20:49Z			and as suggested visually by @takluyver, but to make sure it's clear, backticks so it renders as code. 
-2018-05-01T03:17:20Z			to clarify for @zichongkao, it's b/c there's a finite # of these methods that are possible, and an object can provide any subset of them.  but an object can't declare an arbitrary `_repr_foo_` method and expect it to work, the list of which are acceptable is pre-defined by us. 
-2018-05-01T03:19:48Z			+1 
-2018-05-01T03:20:49Z			and as suggested visually by @takluyver, but to make sure it's clear, backticks so it renders as code. 
