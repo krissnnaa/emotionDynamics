@@ -1,0 +1,6 @@
+Created Date				Comments
+2018-09-15T12:08:19Z			in the classic notebook we dont even see our dict keys in the default viewimg width316 altimage srchttpsuserimagesgithubusercontentcom2096628455860851c1cac80b8b611e89d43540c3270d39dpng 
+2018-09-15T12:09:29Z			i my ideal world this would be the default behavior smile 
+2018-09-15T18:52:45Z			happy to take a crack at implementation if theres consensus   
+2018-09-15T18:53:48Z			wed also want files in a magic since we use them in shell magics for example  
+2018-09-15T12:05:13Z			prior to this changehttpsgithubcomipythonipythonpull10969filesdiff209aa0d39c762bbd484ee5edeed641fer1113 i was able to set matchers directly to accomplish this 
